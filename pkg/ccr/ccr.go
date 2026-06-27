@@ -3,8 +3,8 @@
 package ccr
 
 import (
-	internalccr "truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/ccr"
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/pkg/platform"
+	internalccr "github.com/cloud-byte-consulting/cachy/internal/ccr"
+	"github.com/cloud-byte-consulting/cachy/pkg/platform"
 )
 
 const (

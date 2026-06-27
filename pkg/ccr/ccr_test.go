@@ -3,7 +3,7 @@ package ccr_test
 import (
 	"testing"
 
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/pkg/ccr"
+	"github.com/cloud-byte-consulting/cachy/pkg/ccr"
 )
 
 func TestPublicCCRMarkerRoundTripCanBeEmbedded(t *testing.T) {

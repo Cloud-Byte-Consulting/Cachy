@@ -2,7 +2,7 @@
 // path resolution.
 package platform
 
-import internalplatform "truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/platform"
+import internalplatform "github.com/cloud-byte-consulting/cachy/internal/platform"
 
 type Options = internalplatform.Options
 type Paths = internalplatform.Paths

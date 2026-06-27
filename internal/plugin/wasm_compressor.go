@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/compress"
+	"github.com/cloud-byte-consulting/cachy/internal/compress"
 )
 
 type ReadWASMFunc func(Info) ([]byte, error)

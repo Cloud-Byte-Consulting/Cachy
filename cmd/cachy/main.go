@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/cli"
+	"github.com/cloud-byte-consulting/cachy/internal/cli"
 )
 
 func main() {

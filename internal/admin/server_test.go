@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/observability"
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/platform"
+	"github.com/cloud-byte-consulting/cachy/internal/observability"
+	"github.com/cloud-byte-consulting/cachy/internal/platform"
 )
 
 func TestServerReturnsAuthenticatedStatus(t *testing.T) {

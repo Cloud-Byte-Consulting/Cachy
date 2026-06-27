@@ -12,12 +12,12 @@ import (
 	"strings"
 	"time"
 
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/doctor"
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/install"
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/observability"
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/platform"
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/plugin"
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/proxy"
+	"github.com/cloud-byte-consulting/cachy/internal/doctor"
+	"github.com/cloud-byte-consulting/cachy/internal/install"
+	"github.com/cloud-byte-consulting/cachy/internal/observability"
+	"github.com/cloud-byte-consulting/cachy/internal/platform"
+	"github.com/cloud-byte-consulting/cachy/internal/plugin"
+	"github.com/cloud-byte-consulting/cachy/internal/proxy"
 )
 
 const DefaultListenAddress = "127.0.0.1:8787"

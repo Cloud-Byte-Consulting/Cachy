@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/tokens"
+	"github.com/cloud-byte-consulting/cachy/internal/tokens"
 )
 
 func TestNativeTextLogCompressorReducesRepeatedLogNoise(t *testing.T) {

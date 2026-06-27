@@ -2,7 +2,7 @@
 // that want to reuse compression validation logic without running the proxy.
 package tokens
 
-import internaltokens "truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/tokens"
+import internaltokens "github.com/cloud-byte-consulting/cachy/internal/tokens"
 
 const MethodEstimated = internaltokens.MethodEstimated
 

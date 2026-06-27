@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/doctor"
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/plugin"
+	"github.com/cloud-byte-consulting/cachy/internal/doctor"
+	"github.com/cloud-byte-consulting/cachy/internal/plugin"
 )
 
 func TestRunProxyRequiresTarget(t *testing.T) {

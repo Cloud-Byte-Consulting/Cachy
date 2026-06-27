@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"truenas-scale-1.tail5a208d.ts.net/Cloud-Byte-Consulting/Cachy/internal/observability"
+	"github.com/cloud-byte-consulting/cachy/internal/observability"
 )
 
 func TestOriginalContentRecoverableOnlyThroughCCRAddress(t *testing.T) {

@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  ci:
+    name: Go quality gates and builds
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Check formatting
+        shell: bash
+        run: |
+          files="$(gofmt -l .)"
+          if [ -n "$files" ]; then
+            echo "The following files need gofmt:"
+            echo "$files"
+            exit 1
+          fi
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Test Go with Ginkgo and JUnit
+        shell: bash
+        run: bash ./scripts/test-go-junit.sh
+
+      - name: Upload Go JUnit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: go-junit-report
+          path: reports/go/go-junit.xml
+
+      - name: Check desktop toolchain
+        run: |
+          node --version
+          npm --version
+
+      - name: Install desktop dependencies
+        run: npm ci --prefix desktop
+
+      - name: Audit desktop dependencies
+        run: npm audit --prefix desktop --audit-level=moderate
+
+      - name: Test desktop app
+        run: npm run test --prefix desktop
+
+      - name: Typecheck desktop app
+        run: npm run typecheck --prefix desktop
+
+      - name: Build desktop app
+        run: npm run build --prefix desktop
+
+      - name: Race tests
+        env:
+          CGO_ENABLED: "1"
+        run: go test -race ./...
+
+      - name: Cross-compile release targets
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+
+          targets=(
+            "windows amd64 cachy_windows_amd64.exe"
+            "windows arm64 cachy_windows_arm64.exe"
+            "darwin amd64 cachy_darwin_amd64"
+            "darwin arm64 cachy_darwin_arm64"
+            "linux amd64 cachy_linux_amd64"
+            "linux arm64 cachy_linux_arm64"
+          )
+
+          for target in "${targets[@]}"; do
+            read -r goos goarch output <<< "$target"
+            echo "Building ${goos}/${goarch}"
+            CGO_ENABLED=0 GOOS="$goos" GOARCH="$goarch" go build -trimpath -o "dist/${output}" ./cmd/cachy
+          done
+
+      - name: Install smoke test
+        run: go test ./internal/installsmoke -run TestArchiveInstallSmokeDoctorAndProxyHealth -count=1

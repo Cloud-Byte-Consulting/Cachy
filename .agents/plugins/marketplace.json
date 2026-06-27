@@ -1,0 +1,20 @@
+{
+  "name": "cachy-local",
+  "interface": {
+    "displayName": "Cachy Local"
+  },
+  "plugins": [
+    {
+      "name": "cachy-engineering",
+      "source": {
+        "source": "local",
+        "path": "./plugins/cachy-engineering"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "cachy-engineering",
+  "version": "0.1.0",
+  "description": "Project skills and operating behaviors for building Cachy.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Cachy Engineering",
+    "shortDescription": "Build Cachy with project-specific engineering skills.",
+    "longDescription": "Cachy Engineering provides focused skills for the Go proxy, Electron companion app, WASM plugin system, cross-platform release engineering, security review, evidence-driven investigation, ADRs, and test-first development.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use Cachy Engineering when working on the Cachy repo."
+  }
+}

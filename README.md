@@ -2,6 +2,17 @@
 
 Cachy is a clean-room Go-first LLM context optimization proxy.
 
+## Part of the Governed Agentic Platform
+
+Cachy is the **token/cost plane** of the Open Engine governed agentic platform: a
+context-optimization proxy that sits upstream of LLM traffic to cut tokens and cost.
+See [the platform getting-started guide](https://github.com/Cloud-Byte-Consulting/agentic-harness/blob/main/GETTING_STARTED.md) for how the pieces fit together.
+
+Sibling pillars:
+- [teo](https://github.com/Cloud-Byte-Consulting/teo) — token/cost pillar: prompt/context formatting that feeds optimized payloads through Cachy.
+- [token-dashboard](https://github.com/Cloud-Byte-Consulting/token-dashboard) — token/cost pillar: cost-visibility and usage reporting over the traffic Cachy proxies.
+- [omnigent](https://github.com/Cloud-Byte-Consulting/omnigent) — agents route their LLM traffic through Cachy as an upstream proxy.
+
 Current status: the transparent proxy, CLI/platform foundation,
 admin/observability baseline, cache-safe native compression foundation, local
 CCR storage foundation, agent integration MVP, Electron companion MVP, WASM
